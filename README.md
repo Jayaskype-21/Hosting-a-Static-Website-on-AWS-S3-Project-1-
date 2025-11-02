@@ -17,8 +17,11 @@ o	Save changes.
 STEP-4:	Note the Bucket website endpoint (URL). You will use this to verify the site.
 
 # Bucket policy (make objects publicly readable)
+
 Important security note: Making the bucket public exposes objects to the world. For production or better security, use CloudFront with an Origin Access setting OR grant only the CloudFront Origin Identity access instead of making bucket objects public.
+
 If you want public objects for a quick demo, paste this into Permissions → Bucket policy (replace the ARN):
+
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -32,11 +35,14 @@ If you want public objects for a quick demo, paste this into Permissions → Buc
   ]
 }
 Replace my-static-site-<yourname> with your bucket name
+
 # Upload site files
 •	Use the S3 Console Upload button and upload index.html, error.html, and the assets folder.
+
 # Test the website
 Open the Bucket website endpoint (example http://my-static-site-<yourname>.s3-website-us-east-1.amazonaws.com) in your browser. The index.html should load.
 To test the error page, navigate to a URL that doesn’t exist (e.g., /missing.html) — S3 will return the error.html content.
+
 # Troubleshooting tips
 •	If you see AccessDenied when visiting the website endpoint, check the bucket policy and object ACLs.
 •	Make sure index.html is present and named exactly as configured.
