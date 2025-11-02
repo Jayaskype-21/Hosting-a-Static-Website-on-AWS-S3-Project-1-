@@ -6,11 +6,14 @@ STEP-1:	AWS Console → S3 → Create bucket.
 o	Give a globally unique bucket name (example: my-static-site-<yourname>).
 o	Region: choose one close to your users.
 o	Uncheck Block all public access if you plan to make objects public through a bucket policy 
+
 STEP-2: Create the bucket.
+
 STEP-3:	In the bucket, go to Properties → Static website hosting → Edit → Enable → Host a static website.
 o	Index document: index.html
 o	Error document: error.html (optional)
 o	Save changes.
+
 STEP-4:	Note the Bucket website endpoint (URL). You will use this to verify the site.
 
 # Bucket policy (make objects publicly readable)
